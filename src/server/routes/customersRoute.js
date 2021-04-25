@@ -3,8 +3,7 @@ const router = express.Router();
 
 // Example of how to get all customers from the customers table
 router.get('/customers', (req, res, next) => {
-    const customers = [];
-    
+    res.send({response: "woohoo"});
     // TODO: Write the SQL query and return results
 });
 
@@ -17,24 +16,23 @@ router.get('/customers/:id', (req, res, next) => {
 
 // Example of how to add a customer to the customers table.
 router.post('/customers', (req, res, next) => {
-    const {
-        businessName, 
-        firstName, 
-        lastName, 
-        email,
-        phoneNUmber,
-        balance,
-        billingStreetLineOne,
-        billingStreetLineTwo,
-        billingCity,
-        billingState,
-        billingZip,
-        cardNumber,
-        cardExpMonth,
-        cardExpYear,
-        businessLicenseNumber
-    } = req.body;
-
+    // const {
+    //     businessName, 
+    //     firstName, 
+    //     lastName, 
+    //     email,
+    //     phoneNUmber,
+    //     balance,
+    //     billingStreetLineOne,
+    //     billingStreetLineTwo,
+    //     billingCity,
+    //     billingState,
+    //     billingZip,
+    //     cardNumber,
+    //     cardExpMonth,
+    //     cardExpYear,
+    //     businessLicenseNumber
+    // } = req.body;
 
     // TODO: Write the SQL query and return a result of true/false depending on post result
 });

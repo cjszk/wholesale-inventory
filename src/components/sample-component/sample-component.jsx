@@ -1,9 +1,13 @@
 import React from 'react';
 
 function getUsers() {
-    fetch(`/api/users`)
-    .then((response) => response.json())
-    .then(res => console.log(res));
+    console.log("attempt getUsers");
+    fetch(`/api/customers`)
+        .then((response) => {
+            // console.log(response);
+            return response.json();
+        })
+        .then(res => console.log(res));
 }
 
 export function SampleComponent() {
