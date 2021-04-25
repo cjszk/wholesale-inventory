@@ -62,6 +62,7 @@ function App() {
             />
           )}
         />
+        <Redirect exact from="/" to="products" />
       </Switch>
     </BrowserRouter>
   );

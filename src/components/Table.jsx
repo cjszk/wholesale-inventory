@@ -59,6 +59,7 @@ export class Table extends React.Component {
                     {tableData.map((data) => (
                         <tr key={data[tableKeys[0]]}>
                             {tableKeys.map(key => <td key={key}>{data[key]}</td>)}
+                            <a>Delete</a>
                         </tr>
                     ))}
                 </tbody>
