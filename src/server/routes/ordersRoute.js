@@ -3,9 +3,20 @@ const router = express.Router();
 
 // Example of how to get all orders from the orders table
 router.get('/orders', (req, res, next) => {
-    const orders = [];
-    
     // TODO: Write the SQL query and return results
+    return res.send(
+        [
+            {
+                orderNumber: 123,
+                orderDate: "2020-12-20",
+                employeeID: 123,
+                customerID: 123,
+                subTotal: 123.00,
+                taxes: 2.00,
+                total: 125.00,
+            }
+        ]
+    );
 });
 
 // Example of how to get a specific order ID from the orders table.

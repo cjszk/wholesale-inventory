@@ -3,9 +3,20 @@ const router = express.Router();
 
 // Example of how to get all employees from the employees table
 router.get('/employees', (req, res, next) => {
-    const employees = [];
-    
     // TODO: Write the SQL query and return results
+    return res.send(
+        [
+            {
+                employeeID: 1,
+                firstName: "Oompa",
+                lastName: "Loompa",
+                type: "dunno",
+                warehouseID: 2,
+                email: "someEmail@okay.com",
+                phoneNumber: "332-342-5342"
+            }
+        ]
+    );
 });
 
 // Example of how to get a specific employee ID from the employees table.

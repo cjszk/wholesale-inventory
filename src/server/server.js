@@ -39,23 +39,10 @@ app.use(function (req, res, next) {
 });  
 
 app.use('/api', customersRouter);
-// app.use('/api', employeesRouter);
-// app.use('/api', ordersRouter);
-// app.use('/api', productsRouter);
-// app.use('/api', warehousesRouter);
-
-// app.get('/api/customers', (req, res) => {
-//   // pool.query(`select * from ${table}`, (err, rows) => {
-//   //   if (err) {
-//   //     res.send(err);
-//   //   } else {
-//   //     res.send(rows);
-//   //   }
-//   // });
-
-//   console.log("hello")
-//   res.send({response: "woohoo"});
-// });
+app.use('/api', employeesRouter);
+app.use('/api', ordersRouter);
+app.use('/api', productsRouter);
+app.use('/api', warehousesRouter);
 
 // Catch 404s
 app.use((req, res, next) => {

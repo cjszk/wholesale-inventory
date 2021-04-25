@@ -3,9 +3,20 @@ const router = express.Router();
 
 // Example of how to get all warehouses from the warehouses table
 router.get('/warehouses', (req, res, next) => {
-    const warehouses = [];
-    
     // TODO: Write the SQL query and return results
+    return res.send(
+        [
+            {
+                warehouseID: 1,
+                warehouseName: "Factory",
+                streetLineOne: "200th street",
+                streetLineTwo: "some place",
+                city: "Nowhere",
+                state: "Dunno",
+                zip: "12434-43",
+            }
+        ]
+    );
 });
 
 // Example of how to get a specific warehouse ID from the warehouses table.

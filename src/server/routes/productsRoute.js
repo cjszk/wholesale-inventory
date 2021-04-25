@@ -3,9 +3,20 @@ const router = express.Router();
 
 // Example of how to get all products from the products table
 router.get('/products', (req, res, next) => {
-    const products = [];
-    
     // TODO: Write the SQL query and return results
+    return res.send(
+        [
+            {
+                productID: 1,
+                productName: "Chocolate",
+                productDescription: "Choco choco",
+                productDepartment: "Dunno",
+                mdPrice: 125.00,
+                retailerPrice: 150.00,
+                suggestedRetailPrice: 200.00,
+            }
+        ]
+    );
 });
 
 // Example of how to get a specific product ID from the products table.
