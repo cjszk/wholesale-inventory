@@ -59,7 +59,8 @@ export class Table extends React.Component {
                     {tableData.map((data) => (
                         <tr key={data[tableKeys[0]]}>
                             {tableKeys.map(key => <td key={key}>{data[key]}</td>)}
-                            <a>Delete</a>
+                            <UpdateButton>Update</UpdateButton>
+                            <DeleteButton>Delete</DeleteButton>
                         </tr>
                     ))}
                 </tbody>
@@ -77,4 +78,12 @@ export class Table extends React.Component {
 
 const StyledTable = styled.table`
     text-align: left;
+`;
+
+const UpdateButton = styled.a`
+    padding: 5px;
+`;
+
+const DeleteButton = styled.a`
+    padding: 5px;
 `;
