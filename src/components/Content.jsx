@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CustomersForm } from './forms/CustomersForm';
+import { Form } from './Form';
 import { Table } from './Table';
 
 export class Content extends React.Component {
@@ -30,9 +30,7 @@ export class Content extends React.Component {
         );
 
         const { tableName } = this.props;
-
-        if (tableName === "Customers") return <CustomersForm />;
-        return <></>;
+        return <Form tableName={tableName} />;
     }
 
     render() {
