@@ -18,10 +18,6 @@ export class Content extends React.Component {
         console.log(this.state);
     }
 
-    renderFormSwitch() {
-
-    }
-
     renderForm() {
         if (!this.state.toggleAdd) return (
             <button onClick={this.toggleAdd}>
