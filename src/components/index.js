@@ -1,1 +1,1 @@
-export { SampleComponent } from './sample-component/sample-component';
+export { Navigation } from './Navigation';

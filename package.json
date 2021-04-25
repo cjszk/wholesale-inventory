@@ -17,8 +17,18 @@
     "nodemon": "^2.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.2.3",
     "web-vitals": "^1.1.1"
+  },
+  "peerDependencies": {
+    "react": "^15.x.x || ^16.x.x || ^17.x.x",
+    "styled-components": "^3.x.x || ^4.x.x || ^5.x.x"
+  },
+  "devDependencies": {
+    "styled-components": "^5.2.3"
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",

@@ -1,0 +1,423 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Segoe UI, Calibri, Arial;
+    font-size: 14px;
+    min-width: fit-content;
+    height: 100vh;
+    margin: 0;
+}
+
+a {
+    color: #007bff;
+    cursor: pointer;
+}
+
+table th {
+    font-weight: 500;
+}
+
+table td{
+    font-weight: 400;
+}
+
+.header-text {
+    cursor: pointer;
+    padding: 20px;
+    color: #00a9bc;
+    font-size: 28px;
+}
+
+.nodata
+{
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.nodata img
+{
+    width: 50px;
+    height: 50px;
+}
+
+.navItems {
+    float: right;
+}
+
+.menuOption {
+    margin-top: 10px;
+}
+
+.navbar a {
+    color: #007bff;
+    font-size: 22px;
+}
+
+.navbar .container{
+    width: auto;
+}
+
+.servicedetail, .graphLabel, .service_releaseid, .loading, .containerlabel, .alert, .searchlabel, .metrics {
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.servicedetail h4{
+    height: 30px;
+    background-color: #CCCC;
+    padding: 5px;
+}
+
+.versionlabel, .clusterlabel {
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.instanceLabel, .clusterlabel {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+ .clusterlist {
+    margin-top: 10px;
+}
+
+.buildurl, .serviceclusters {
+    margin-top: 20px;
+}
+
+.service_releaseid, .loading, .containerlabel {
+    font-weight: 600;
+    padding: 10px;
+}
+
+.loading {
+    margin: 20px;
+}
+
+.wrapper
+{
+    padding: 30px;
+}
+
+.searchlabel
+{
+    display: inline-block;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.searchBar .sc-htpNat {
+    display: inline-block;
+}
+
+
+.tablecontainer {
+    margin: 0 40px;
+    margin-top: 10px;
+}
+
+.heading {
+    margin: 20px;
+    padding: 15px;
+    background: lightgray;
+    height: 50px;
+}
+
+.metrics .active, .servicedetail .active, .logs .active {
+    background-color: #CCC;
+}
+
+.metrics button:not(.disabled_btn):hover, .servicedetail button:not(.disabled_btn):hover, .logs button:not(.disabled_btn):hover {
+    background-color: #999;
+}
+
+.disabled_btn {
+    cursor: default;
+}
+
+.logdashboard iframe {
+     width: 100%;
+     height: 40vh;
+}
+
+.alert {
+     background-color: #faebcc;
+     text-align: center;
+     margin-bottom: 0px;
+}
+
+.servicedetail .alert {
+    margin: 0 0 0 150px;
+}
+
+.servicelabel {
+    margin: 10px;
+    font-size: 22px;
+    display: inline-block;
+}
+
+.header_subsection .refreshbtn {
+    float: right;
+    margin: 15px 30px 0 0;
+
+}
+
+.refreshbtn span{
+  vertical-align: top;
+}
+
+.refreshbtn svg {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.bar {
+    fill: steelblue;
+}
+
+.bar:hover {
+    fill: #23527c;
+}
+
+.axis {
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+     fill: none;
+     stroke: #000;
+     shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.releaseDetails
+{
+   display: inline-block;
+   position: absolute;
+}
+
+.navline {
+    border-left: 2px solid #CCC;
+    border-left: 2px solid #CCC;
+    margin-left: 150px;
+    position: absolute;
+}
+
+.bar
+{
+    cursor: pointer;
+}
+
+.navbar .container a {
+    color: #00a9bc;
+}
+
+.modal-backdrop
+{
+    position: inherit;
+}
+
+.header svg{
+    float: right;
+    font-size: 32px;
+    margin-top: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.modal {
+    left: auto;
+    margin-top: 25px;
+}
+
+.modal-dialog {
+    width: 200px;
+    margin-right: 20px;
+}
+
+.modal-title
+{
+    font-size: 14px;
+}
+
+.modal-footer .btn {
+    color: #00a9bc;
+}
+
+.header svg:hover {
+    color: #23527c;
+}
+
+.dateTimePicker div {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(93, 126, 198);
+}
+
+.deployedclusters {
+    margin: 0 15px;
+}
+
+.dep_chart {
+   display: inline-block;
+}
+
+.dep_chart h3, .dep_chart .graphLabel {
+    margin-left: 15px;
+}
+
+.offset input
+{
+    width: 40px;
+    margin-right: 0px;
+}
+
+.offset button {
+    width: 80px;
+    margin: -5px 10px 0 0;
+    border-radius: initial;
+}
+
+.react-datetime-picker button {
+    width: 25px;
+}
+
+.react-datetime-picker {
+    margin-right: 10px;
+}
+
+.deploymentlogs_category
+{
+    margin: 10px;
+}
+
+.mainTable tr{
+    word-wrap: break-word;
+}
+
+.mainTable
+{
+table-layout: fixed;
+}
+
+.mainTable th
+{
+text-align: center;
+}
+
+.mainTable svg{
+    cursor: pointer;
+}
+
+.serviceInfoContainer {
+    margin: 0 150px;
+}
+
+.pagination {
+    margin: 10px 0 0 0;
+}
+
+.pagination .active a {
+color: #FFF;
+}
+
+.homepage_heatlDB_link {
+    float: right;
+    margin-left: 10px;
+}
+
+.loading .css-bpo9rd {
+    margin: 0 auto;
+    display: block;
+}
+
+.feedback {
+    float: right;
+    font-size: 18px;
+    margin-top: 8px;
+    color: #00a9bc;
+}
+
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+table th, table td {
+    font-size: inherit;
+    font-family: Segoe UI, Calibri, Arial;
+}
+
+.select_entries {
+    width: 80px;
+    margin: 0 10px -40px 10px;
+    display: inline-block;
+}
+
+.globalSearch
+{
+    float: right;
+}
+
+.selectLabel
+{
+    margin-left: 40px;
+}
+
+.entries_info
+{
+    float: right;
+}
+
+.text-info {
+    color: #17a2b8;
+}
+
+.font-italic
+{
+    font-style: italic;
+}
+
+bg-warning {
+    background-color: #ffc107
+}
+
+a.bg-warning:focus, a.bg-warning:hover, button.bg-warning:focus, button.bg-warning:hover {
+    background-color: #d39e00
+}
+
+.text-dark {
+    color: #343a40
+}
+
+a.text-dark:focus, a.text-dark:hover {
+    color: #121416
+}
+
+.border {
+    border: 1px solid #dee2e6
+}
+
+.border-info {
+    border-color: #17a2b8
+}
+
+.rounded {
+    border-radius: .25rem
+}
+
+.p-3 {
+    padding: 1rem
+}
+
+.mb-2 {
+    margin-bottom: .5rem
+}

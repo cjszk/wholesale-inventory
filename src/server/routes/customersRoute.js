@@ -3,8 +3,27 @@ const router = express.Router();
 
 // Example of how to get all customers from the customers table
 router.get('/customers', (req, res, next) => {
-    res.send({response: "woohoo"});
     // TODO: Write the SQL query and return results
+
+    // TEMP
+    console.log("endpoint reached");
+    return res.send({
+        businessName: "Willy Wonka",
+        firstName: "Willy",
+        lastName: "Wonka",
+        email: "willyWonka@wonka.com",
+        phoneNumber: "342-324-3244",
+        balance: 150.00,
+        billingStreetLineOne: "12222 Street",
+        billingStreetLineTwo: "",
+        billingCity: "Phoenix",
+        billingState: "New York",
+        billingZip: "34244",
+        cardNumber: 1234123412341234,
+        cardExpMonth: 12,
+        cardExpYear: 2020,
+        businessLicenseNumber: 12345
+    });
 });
 
 // Example of how to get a specific customer ID from the customers table.
@@ -21,7 +40,7 @@ router.post('/customers', (req, res, next) => {
     //     firstName, 
     //     lastName, 
     //     email,
-    //     phoneNUmber,
+    //     phoneNumber,
     //     balance,
     //     billingStreetLineOne,
     //     billingStreetLineTwo,
