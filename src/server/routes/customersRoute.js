@@ -23,6 +23,24 @@ router.get('/customers', (req, res, next) => {
                 cardExpMonth: 12,
                 cardExpYear: 2020,
                 businessLicenseNumber: 12345
+            },
+            {
+                customerId: 1,
+                businessName: "Willy Wonka",
+                firstName: "Willy",
+                lastName: "Wonka",
+                email: "willyWonka@wonka.com",
+                phoneNumber: "342-324-3244",
+                balance: 150.00,
+                billingStreetLineOne: "12222 Street",
+                billingStreetLineTwo: "",
+                billingCity: "Phoenix",
+                billingState: "New York",
+                billingZip: "34244",
+                cardNumber: 1234123412341234,
+                cardExpMonth: 12,
+                cardExpYear: 2020,
+                businessLicenseNumber: 12345
             }
         ]
     );

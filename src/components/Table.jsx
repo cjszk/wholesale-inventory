@@ -34,11 +34,10 @@ export class Table extends React.Component {
             });
     }
 
-    handleUpdateClick(data) {
+    handleUpdateClick(index) {
         this.setState({
-            selected: data.productID
+            selected: index
         });
-        console.log(this.state);
     }
 
     renderTableData() {
@@ -58,14 +57,14 @@ export class Table extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {tableData.map((data) => (
+                    {tableData.map((data, index) => (
                         <>
-                            <tr key={data.productID}>
+                            <tr key={index}>
                                 {tableKeys.map(key => <td key={key}>{data[key]}</td>)}
-                                <td><UpdateButton onClick={() => this.handleUpdateClick(data)}>Update</UpdateButton></td>
+                                <td><UpdateButton onClick={() => this.handleUpdateClick(index)}>Update</UpdateButton></td>
                                 <td><DeleteButton>Delete</DeleteButton></td>
                             </tr>
-                            {data.productID === selected ? (<tr>{tableKeys.map(key => <td key={key}><FieldInput /></td>)}</tr>) : <></>}
+                            {index === selected ? (<tr>{tableKeys.map(key => <td key={key}><FieldInput /></td>)}</tr>) : <></>}
                         </>
                     ))}
                 </tbody>
