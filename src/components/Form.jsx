@@ -15,7 +15,6 @@ export class Form extends React.Component {
         if (tableName === "Orders") this.setOrders();
         if (tableName === "Products") this.setProducts();
         if (tableName === "Warehouses") this.setWarehouses();
-        console.log(this.state);
     }
 
     setCustomers() {

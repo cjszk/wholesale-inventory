@@ -15,7 +15,6 @@ export class Content extends React.Component {
         this.setState({
             toggleAdd: !this.state.toggleAdd
         });
-        console.log(this.state);
     }
 
     renderForm() {

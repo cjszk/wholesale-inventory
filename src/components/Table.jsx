@@ -6,23 +6,20 @@ export class Table extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            selected: null,
             tableData: []
         }
     }
 
     componentDidMount() {
-        console.log(this.props.tableName);
         this.getTableData();
     }
 
     componentDidUpdate() {
-        console.log(this.state);
     }
 
     getTableData = async () => {
-        console.log("attempt getTableData");
         const { tableName } = this.props;
-        console.log(`tableName: ${tableName}`)
 
         await fetch(`/api/${tableName}`)
             .then((response) => {
@@ -37,12 +34,17 @@ export class Table extends React.Component {
             });
     }
 
+    handleUpdateClick(data) {
+        this.setState({
+            selected: data.productID
+        });
+        console.log(this.state);
+    }
+
     renderTableData() {
-        const { tableData } = this.state;
+        const { tableData, selected } = this.state;
         if (tableData.length === 0) return <></>;
-        console.log(tableData);
         const tableKeys = Object.keys(tableData[0]);
-        console.log(tableKeys);
 
         return (
             <>
@@ -57,11 +59,14 @@ export class Table extends React.Component {
                 </thead>
                 <tbody>
                     {tableData.map((data) => (
-                        <tr key={data[tableKeys[0]]}>
-                            {tableKeys.map(key => <td key={key}>{data[key]}</td>)}
-                            <UpdateButton>Update</UpdateButton>
-                            <DeleteButton>Delete</DeleteButton>
-                        </tr>
+                        <>
+                            <tr key={data.productID}>
+                                {tableKeys.map(key => <td key={key}>{data[key]}</td>)}
+                                <td><UpdateButton onClick={() => this.handleUpdateClick(data)}>Update</UpdateButton></td>
+                                <td><DeleteButton>Delete</DeleteButton></td>
+                            </tr>
+                            {data.productID === selected ? (<tr>{tableKeys.map(key => <td key={key}><FieldInput /></td>)}</tr>) : <></>}
+                        </>
                     ))}
                 </tbody>
             </>
@@ -86,4 +91,8 @@ const UpdateButton = styled.a`
 
 const DeleteButton = styled.a`
     padding: 5px;
+`;
+
+const FieldInput = styled.input`
+    width: 100px;
 `;
