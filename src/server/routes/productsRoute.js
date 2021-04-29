@@ -14,7 +14,25 @@ router.get('/products', (req, res, next) => {
                 mdPrice: 125.00,
                 retailerPrice: 150.00,
                 suggestedRetailPrice: 200.00,
-            }
+            },
+            {
+                productID: 2,
+                productName: "Chocolate",
+                productDescription: "Choco choco",
+                productDepartment: "Dunno",
+                mdPrice: 125.00,
+                retailerPrice: 150.00,
+                suggestedRetailPrice: 200.00,
+            },
+            {
+                productID: 3,
+                productName: "Chocolate",
+                productDescription: "Choco choco",
+                productDepartment: "Dunno",
+                mdPrice: 125.00,
+                retailerPrice: 150.00,
+                suggestedRetailPrice: 200.00,
+            },
         ]
     );
 });

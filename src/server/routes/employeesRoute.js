@@ -14,7 +14,25 @@ router.get('/employees', (req, res, next) => {
                 warehouseID: 2,
                 email: "someEmail@okay.com",
                 phoneNumber: "332-342-5342"
-            }
+            },
+            {
+                employeeID: 1,
+                firstName: "Oompa",
+                lastName: "Loompa",
+                type: "dunno",
+                warehouseID: 2,
+                email: "someEmail@okay.com",
+                phoneNumber: "332-342-5342"
+            },
+            {
+                employeeID: 1,
+                firstName: "Oompa",
+                lastName: "Loompa",
+                type: "dunno",
+                warehouseID: 2,
+                email: "someEmail@okay.com",
+                phoneNumber: "332-342-5342"
+            },
         ]
     );
 });
