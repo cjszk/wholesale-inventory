@@ -35,7 +35,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "client": "PORT=25341 react-scripts start",
+    "client": "react-scripts start",
     "server": "nodemon -r dotenv/config ./src/server/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
