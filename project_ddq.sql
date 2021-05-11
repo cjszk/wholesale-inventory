@@ -11,7 +11,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE Customers (
     Customer_ID serial PRIMARY KEY,
-    Business_name varchar(255) NOT NULL,
+    Business_Name varchar(255) NOT NULL,
     First_Name varchar(255) NOT NULL,
     Last_Name varchar(255) NOT NULL,
     Email varchar(255) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE Customers (
     Card_Number int NOT NULL,
     Card_Exp_Month int NOT NULL,
     Card_Exp_Year int NOT NULL,
-    Business_License_number varchar(255) NOT NULL
+    Business_License_Number varchar(255) NOT NULL
 );
 
 CREATE TABLE Employees (
@@ -68,10 +68,8 @@ CREATE TABLE Warehouses (
     Zip int not NULL,
 );
 
-ALTER SEQUENCE Orders RESTART WITH 1000;
-
 INSERT INTO Customers (
-    Business_name,
+    Business_Name,
     First_Name,
     Last_Name,
     Email,
@@ -83,7 +81,7 @@ INSERT INTO Customers (
     Card_Number,
     Card_Exp_Month,
     Card_Exp_Year,
-    Business_License_number) VALUES
+    Business_License_Number) VALUES
 ("Super Farmer's Market", "Sandy", "Gilford", "sandysand@fake.com", 100000, "12th Street Nowhere", "Seattle", "Washington", 1243434304042312, 11, 2023, 3423494),
 ("Apples and More", "Kevin", "Spat", "ilikeapples@fake.com", 100000, "24th Street Nowhere", "Sacramento", "California", 5453243421349876, 8, 2021, 6754215890),
 ("John's Local Market", "John", "Smith", "johnsmith@fake.com", 100000, "120th Street Nowhere", "Portland", "Oregon", 1234567812345678, 1, 2021, 1234567890);
@@ -118,6 +116,10 @@ INSERT INTO Products (
 ('Monster Energy Drink', 1.29, 1.79, 1.99),
 ('Snapple Black Tea', 1.00, 1.59, 1.79),
 ('Pocket Lighter', 0.49, 0.79, 0.99);
+
+
+-- Considerations, maybe we want to start orders at 1000 instead of 1
+-- ALTER SEQUENCE Orders RESTART WITH 1000;
 
 INSERT INTO Orders (
     Order_Date, 
