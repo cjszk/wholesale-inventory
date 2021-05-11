@@ -1,11 +1,13 @@
 SELECT CURRENT_DATE;
 
 -- Drop all tables
+SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS Customers;
 DROP TABLE IF EXISTS Products;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Employees;
 DROP TABLE IF EXISTS Warehouses;
+SET FOREIGN_KEY_CHECKS = 1;
 
 CREATE TABLE Customers (
     Customer_ID serial PRIMARY KEY,
@@ -82,70 +84,47 @@ INSERT INTO Customers (
     Card_Exp_Month,
     Card_Exp_Year,
     Business_License_number) VALUES
-(
-    "Chocolatey",
-    "Willy",
-    "Wonka",
-    "willyWonka@oompa.com",
-    100000,
-    "120th Street Nowhere",
-    "Somewhere",
-    "New York",
-    1234567812345678,
-    1,
-    2021,
-    1234567890
-);
+("Super Farmer's Market", "Sandy", "Gilford", "sandysand@fake.com", 100000, "12th Street Nowhere", "Seattle", "Washington", 1243434304042312, 11, 2023, 3423494),
+("Apples and More", "Kevin", "Spat", "ilikeapples@fake.com", 100000, "24th Street Nowhere", "Sacramento", "California", 5453243421349876, 8, 2021, 6754215890),
+("John's Local Market", "John", "Smith", "johnsmith@fake.com", 100000, "120th Street Nowhere", "Portland", "Oregon", 1234567812345678, 1, 2021, 1234567890);
 
+-- Only one warehouse for now
 INSERT INTO Warehouses (
     Warehouse_Name,
     Street_Line_1,
     City,
     State,
     Zip) VALUES
-(
-    "First",
-    "1st Street",
-    "Phoenix",
-    "Arizona",
-    12345
-);
+("First", "1st Street", "Phoenix", "Arizona", 12345);
 
+-- All employees will be assigned to the only warehouse for now
 INSERT INTO Employees (
     First_Name,
     Last_Name,
     Type,
     Warehouse_ID) VALUES
-(
-    "Oompa",
-    "Loompa",
-    1,
-    1
-);
+("Sally", "Kat", 1, 1),
+("Daveed", "Stix", 1, 1),
+("Katie", "Woods", 1, 1),
+("Alex", "Anderson", 1, 1);
 
-INSERT INTO Orders (
-    Order_Date,
-    Employee_ID,
-    Customer_ID,
-    Subtotal,
-    Taxes,
-    Total) VALUES
-(
-    "2020-12-20",
-    1,
-    1,
-    1.20,
-    0.12,
-    1.32
-);
-
-INSERT INTO Products (Product_name,
+INSERT INTO Products (
+    Product_name,
     MD_Price,
     Retailer_Price,
     Suggested_Retail_Price) VALUES
-(
-    'Chocolate',
-    1.00,
-    1.50,
-    2.00
-);
+('Twix', 0.69, 0.99, 1.49),
+('Kit Kat', 0.69, 0.99, 1.49),
+('Monster Energy Drink', 1.29, 1.79, 1.99),
+('Snapple Black Tea', 1.00, 1.59, 1.79),
+('Pocket Lighter', 0.49, 0.79, 0.99);
+
+INSERT INTO Orders (
+    Order_Date, 
+    Employee_ID, 
+    Customer_ID, 
+    Subtotal, 
+    Taxes,
+    Total) VALUES
+("2020-12-20", 1, 1, 0.69, 0.12, 0.81),
+("2021-3-21", 2, 2, 2.08, 0.34, 2.42);
