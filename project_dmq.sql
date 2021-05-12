@@ -1,3 +1,6 @@
+-- Query for add a new character functionality with $ character being used to 
+-- denote the variables that will have data from the backend programming language
+
 -- SELECT all Customers
 SELECT * FROM Customers;
 
