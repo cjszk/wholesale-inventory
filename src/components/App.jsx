@@ -62,6 +62,28 @@ function App() {
             />
           )}
         />
+        <Route 
+          exact
+          path={['/product_orders']}
+          render={(props) => (
+            <Layout
+              navSelection={'Product Orders'}
+              key="product_orders"
+              {...props}
+            />
+          )}
+        />
+        <Route 
+          exact
+          path={['/warehouse_inventory']}
+          render={(props) => (
+            <Layout
+              navSelection={'Warehouse Inventory'}
+              key="warehouse_inventory"
+              {...props}
+            />
+          )}
+        />
         <Redirect exact from="/" to="products" />
       </Switch>
     </BrowserRouter>

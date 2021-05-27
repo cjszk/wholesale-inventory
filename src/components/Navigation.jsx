@@ -8,7 +8,9 @@ export function Navigation() {
         { name: "Warehouses", path: "/warehouses" },
         { name: "Orders", path: "/orders" },
         { name: "Customers", path: "/customers" },
-        { name: "Employees", path: "/employees" }
+        { name: "Employees", path: "/employees" },
+        { name: "Product Orders", path: "/product_orders" },
+        { name: "Warehouse Inventory", path: "/warehouse_inventory" }
     ];
 
     return (

@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import Select from 'react-select'
 import { formatText } from 'utils';
 
 export class Table extends React.Component {
@@ -19,7 +20,10 @@ export class Table extends React.Component {
     }
 
     getTableData = async () => {
-        const { tableName } = this.props;
+        this.setState({
+            tableData: this.createDummyData()
+        });
+        // const { tableName } = this.props;
 
         await fetch(`/api/${tableName}`)
             .then((response) => {
@@ -214,6 +218,25 @@ export class Table extends React.Component {
                 zip: "12434-43",
             }
         ];
+        if (tableName === "Product Orders") return [
+            {
+                productOrderID: 1,
+                productID: 1,
+                orderNumber: 1,
+                productQuantity: 1 
+            }
+        ];
+        if (tableName === "Warehouse Inventory") return [
+            {
+                warehouseID: 1,
+                warehouseName: "Willy Wonka",
+                streetLineOne: "200th street",
+                streetLineTwo: "some place",
+                city: "Amsterdam",
+                state: "New Something",
+                zip: "00000"
+            }
+        ];
     }
 
     handleUpdateClick(index) {
@@ -227,8 +250,17 @@ export class Table extends React.Component {
         if (tableData.length === 0) return <></>;
         const tableKeys = Object.keys(tableData[0]);
 
+        console.log(tableData);
+
+        const options = Object.values(tableData[0]).map((x) => ({
+            value: x,
+            label: x
+        }));
+
         return (
             <>
+                <FilterInput>Filter:</FilterInput>
+                <SelectInput options={options} />
                 <thead>
                     <TableRow>
                         {tableKeys.map(d => (
@@ -264,6 +296,14 @@ export class Table extends React.Component {
             </StyledTable>);
     }
 }
+
+const SelectInput = styled(Select)`
+    width: 200px;
+`;
+
+const FilterInput = styled.label`
+    margin-right: 10px;
+`;
 
 const StyledTable = styled.table`
     text-align: left;

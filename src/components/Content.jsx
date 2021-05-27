@@ -30,6 +30,7 @@ export class Content extends React.Component {
 
     render() {
         const { tableName } = this.props;
+
         return (
             <ContentWrapper>
                 <h1>{tableName}</h1>
