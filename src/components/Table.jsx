@@ -23,9 +23,13 @@ export class Table extends React.Component {
 
         await fetch(`/api/${tableName}`)
             .then((response) => {
+                console.log(response);
                 return response.json();
             })
-            .then((tableData) => this.setState({ tableData }))
+            .then((tableData) => {
+                console.log(tableData);
+                this.setState({ tableData });
+            })
             .catch((err) => {
                 console.error(err);
                 this.setState({
@@ -226,23 +230,26 @@ export class Table extends React.Component {
         return (
             <>
                 <thead>
-                    <tr>
+                    <TableRow>
                         {tableKeys.map(d => (
-                            <th style={{ padding: 5 }} key={d}>
+                            <TableRow as={"th"} style={{ padding: 5 }} key={d}>
                                 {formatText(d)}
-                            </th>)
+                            </TableRow>)
                         )}
-                    </tr>
+                    </TableRow>
                 </thead>
                 <tbody>
                     {tableData.map((data, index) => (
                         <>
-                            <tr key={index}>
-                                {tableKeys.map(key => <td key={key}>{data[key]}</td>)}
-                                <td><UpdateButton onClick={() => this.handleUpdateClick(index)}>Update</UpdateButton></td>
-                                <td><DeleteButton>Delete</DeleteButton></td>
-                            </tr>
-                            {index === selected ? (<tr>{tableKeys.map(key => <td key={key}><FieldInput /></td>)}</tr>) : <></>}
+                            <TableRow key={index}>
+                                {tableKeys.map(key => <TableCell key={key}>{data[key]}</TableCell>)}
+                                <TableCell><UpdateButton onClick={() => this.handleUpdateClick(index)}>Update</UpdateButton></TableCell>
+                                <TableCell><DeleteButton>Delete</DeleteButton></TableCell>
+                            </TableRow>
+                            {index === selected ? (
+                                <TableRow>
+                                    {tableKeys.map(key => <TableCell key={key}><FieldInput /></TableCell>)}
+                                </TableRow>) : <></>}
                         </>
                     ))}
                 </tbody>
@@ -260,6 +267,14 @@ export class Table extends React.Component {
 
 const StyledTable = styled.table`
     text-align: left;
+    border: 1px solid black;
+`;
+
+const TableRow = styled.tr`
+`;
+
+const TableCell = styled.td`
+
 `;
 
 const UpdateButton = styled.a`
