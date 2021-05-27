@@ -23,8 +23,8 @@ export class Table extends React.Component {
         this.setState({
             tableData: this.createDummyData()
         });
-        // const { tableName } = this.props;
 
+        const { tableName } = this.props;
         await fetch(`/api/${tableName}`)
             .then((response) => {
                 console.log(response);
